@@ -1,0 +1,102 @@
+details.trust-show-hide {
+  overflow: hidden;
+  --message-collapse: attr(data-collapse-message);
+  --message-open: attr(data-open-message);
+}
+
+details.trust-show-hide summary::-webkit-details-marker {
+  display: none;
+}
+
+details.trust-show-hide summary {
+  --pt: 1rem;
+  --pr: 2.2rem;
+  --pb: 1rem;
+  --pl: 0.25rem;
+}
+
+details.trust-show-hide summary {
+  outline: none;
+  display: flex;
+  background-color: var(--clr-lightgrey);
+  color: var(--clr-primary);
+  border: 1px dashed var(--clr-border);
+  border-radius: 5px;
+  padding-top: var(--pt);
+  padding-right: var(--pr);
+  padding-bottom: var(--pb);
+  padding-left: var(--pl);
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+details.trust-show-hide summary:before {
+  position: absolute;
+  content: '×';
+  color: var(--clr-primary);
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 0.7rem;
+  top: calc(var(--pt) + 1rem);
+  left: calc(100% - var(--pr));
+  transform: rotateZ(45deg) translateX(0);
+  transform-origin: center;
+  transition: 0.2s transform ease;
+}
+
+details[open].trust-show-hide > summary:before {
+  transform: rotateZ(-90deg) translateX(2px) translateY(4px);
+  color: var(--clr-accent) !important;
+  transition: transform ease 0.3s;
+}
+
+@keyframes details-show {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+details.trust-show-hide > .trust-show-hide__content {
+  animation: details-show 200ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  transition: all 0.1s ease-in-out;
+  color: transparent;
+  overflow: hidden;
+}
+
+details[open].trust-show-hide > .trust-show-hide__content {
+  color: inherit;
+}
+
+details.trust-show-hide .trust-show-hide__title {
+  margin: 0 0.5rem;
+  color: var(--clr-primary);
+  line-height: 2rem;
+  font-size: 1.175rem;
+}
+@media (min-width: 768px) {
+  details.trust-show-hide .trust-show-hide__title {
+    font-size: 1.5rem;
+    line-height: inherit;
+  }
+}
+
+details.trust-show-hide .trust-show-hide__title:after {
+  content: var(--message-collapse);
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin: 0 0.5rem;
+  color: var(--clr-accent);
+}
+
+details[open].trust-show-hide .trust-show-hide__title:after {
+  content: var(--message-open);
+  color: var(--clr-primary);
+}
+
+.trust-show-hide__content {
+  padding-top: 1rem;
+}

@@ -1,0 +1,106 @@
+.feat-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 1.25rem;
+  list-style: none;
+  padding-right: 0 !important;
+  counter-reset: css-counter 0;
+  position: relative;
+  margin: 0;
+}
+
+@media (min-width: 767px) {
+  .feat-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feat-list__item {
+  border: 1px solid var(--clr-border);
+  padding: 1rem;
+  padding-bottom: calc(
+    1rem + 5px
+  ); /*based on the top position of :before element*/
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  min-width: 100%;
+  width: 100%;
+  counter-increment: css-counter 1;
+  position: relative;
+}
+
+.feat-list__item h1,
+.feat-list__item h2,
+.feat-list__item h3,
+.feat-list__item h4,
+.feat-list__item h5,
+.feat-list__item h6 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 1.25rem !important;
+}
+
+.feat-list__item p {
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+  font-size: 0.9rem;
+}
+
+.feat-list__item strong {
+  color: var(--clr-primary);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.feat-list__item > *:first-child {
+  display: inline;
+}
+
+.feat-list__item:before {
+  content: counter(css-counter) ' ';
+  font-family: Shabnam, serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: 5px;
+  text-align: center;
+  background-color: rgba(255, 23, 68, 0.1);
+  display: inline-block;
+  color: var(--clr-accent);
+  margin: 0 0 0.75rem 0.75rem;
+  border-radius: 5px;
+}
+.feat-grid-section .feat-list .feat-list__item:nth-child(n) {
+  border-top: 6px solid rgba(255, 23, 68, 0.1);
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(2n) {
+  border-top: 6px solid rgba(61, 90, 254, 0.15);
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(2n):before {
+  background-color: rgba(61, 90, 254, 0.15);
+  color: #3d5afe;
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(3n) {
+  border-top: 6px solid rgba(39, 174, 96, 0.2);
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(3n):before {
+  background-color: rgba(39, 174, 96, 0.2);
+  color: #27ae60;
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(4n) {
+  border-top: 6px solid rgba(158, 82, 230, 0.15);
+}
+
+.feat-grid-section .feat-list .feat-list__item:nth-child(4n):before {
+  background-color: rgba(158, 82, 230, 0.15);
+  color: #9b51e0;
+}

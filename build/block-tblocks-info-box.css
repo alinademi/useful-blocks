@@ -1,0 +1,135 @@
+.trust-info-box {
+    /* Build values */
+    --alert-clr-success: #27ae60;
+    --alert-clr-success--light: #ffffff;
+    --alert-clr-danger: #ff4081;
+    --alert-clr-danger--light: rgba(255, 64, 128, 0.11);
+    --alert-clr-info: #3d5afe;
+    --alert-clr-info--light: rgba(61, 90, 254, 0.15);
+  
+    --alert-icon-success: '';
+    --alert-icon-danger: '!';
+    --alert-icon-info: '◄';
+  
+    --alert-icon-height-success: none;
+    --alert-icon-height-danger: 2.75rem;
+    --alert-icon-height-info: 2.625rem;
+  
+    --alert-icon-padding-success: none;
+    --alert-icon-padding-danger: 0 1rem;
+    --alert-icon-padding-info: 0 0.5rem 0 0.175rem;
+  
+    --alert-icon-font-size-success: 2.5rem;
+    --alert-icon-font-size-danger: 2.5rem;
+    --alert-icon-font-size-info: 2rem;
+  
+    --alert-icon-line-height-success: 1.05;
+    --alert-icon-line-height-danger: 1.25;
+    --alert-icon-line-height-info: 1.5;
+  
+    /* Assign variables */
+    --alert-clr: var(--alert-clr-success);
+    --alert-clr--light: var(--alert-clr-success--light);
+    --alert-clr-bg: var(--clr-white);
+    --alert-clr-txt: var(--clr-primary);
+    --alert-clr-border: var(--clr-border);
+    --alert-clr-border-right: var(--alert-clr);
+  
+    --alert-icon: var(--alert-icon-success);
+    --alert-icon-h: var(--alert-icon-height-success);
+    --alert-icon-m: var(--alert-icon-margin-success);
+    --alert-icon-p: var(--alert-icon-padding-success);
+    --alert-icon-fsz: var(--alert-icon-font-size-success);
+    --alert-icon-lh: var(--alert-icon-line-height-success);
+  
+    /* Build styles */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border-style: none;
+    padding: 10px;
+    padding: 2.5rem 0.75rem 2rem 0.75rem;
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-border);
+    border-right: 7px solid var(--alert-clr);
+    border-radius: 5px 5px 40px 5px;
+    max-width: 800px;
+    margin: 2rem auto;
+    align-self: center;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 2%), 0 2px 2px rgb(0 0 0 / 2%),
+      0 4px 4px rgb(0 0 0 / 2%), 0 6px 8px rgb(0 0 0 / 2%);
+    -webkit-transform: translateY(0);
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .trust-info-box:hover {
+    box-shadow: 0 2px 2px rgb(0 90 250 / 3%), 0 4px 4px rgb(0 90 250 / 3%),
+      0 8px 8px rgb(0 90 250 / 3%), 0 16px 16px rgb(0 90 250 / 3%);
+  }
+  
+  .trust-info-box .trust-info-box__body-txt {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .trust-info-box .trust-info-box__body-txt:before {
+    content: var(--alert-icon);
+    display: inline-block;
+    font-size: var(--alert-icon-fsz);
+    line-height: var(--alert-icon-lh);
+    color: var(--alert-clr);
+    background-color: var(--alert-clr--light);
+    border-radius: 5px;
+    height: var(--alert-icon-h);
+    margin: -1rem 0 0.5rem 0.75rem;
+    padding: var(--alert-icon-p);
+    position: relative;
+    top: 4px;
+  }
+  
+  .trust-info-box__cite {
+    max-width: 670px;
+    font-style: normal;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--clr-link);
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .trust-info-box {
+      padding: 3rem 1.5rem;
+      font-size: 1.15rem;
+    }
+  
+    .trust-info-box:hover {
+      transform: scale(1.01, 1.01);
+    }
+  }
+  
+  .trust-info-box.is-style-danger {
+    --alert-clr: var(--alert-clr-danger);
+    --alert-icon: var(--alert-icon-danger);
+    --alert-clr--light: var(--alert-clr-danger--light);
+    --alert-icon-h: var(--alert-icon-height-danger);
+    --alert-icon-p: var(--alert-icon-padding-danger);
+    --alert-icon-fsz: var(--alert-icon-font-size-danger);
+    --alert-icon-lh: var(--alert-icon-line-height-danger);
+  }
+  
+  .trust-info-box.is-style-info {
+    --alert-clr: var(--alert-clr-info);
+    --alert-icon: var(--alert-icon-info);
+    --alert-clr--light: var(--alert-clr-info--light);
+    --alert-icon-h: var(--alert-icon-height-info);
+    --alert-icon-p: var(--alert-icon-padding-info);
+    --alert-icon-fsz: var(--alert-icon-font-size-info);
+    --alert-icon-lh: var(--alert-icon-line-height-info);
+  }
+  
+  .trust-info-box--no-icon .trust-info-box__body-txt:before {
+    display: none;
+  }
+  
